@@ -1,2 +1,6 @@
 # TowerBuilder
-Program that uses first year engineering axial and bending load equations to build a tapering tower out of select materials.
+This is a program that uses first year engineering axial and bending load equations to build a tapering tower out of select materials. It is written in Java and uses a basic JFrame GUI. It calculates each layer, and the needed area to support higher layers, using an iterative approach. These iterations are based on a variable called "calcScale" which is set to 1 mm by default. The properties of each layer depend on the mass of the above layers. The tower can also be made hollow, with an inner space. This increases the moment of inertia for a given area and mass which decreases bending stressess at the cost of increasing wind pressure.
+
+The equation to determine needed radius to support both bending and axial loads is quartic so an iterative approach using the same variable is used there as well. It works fairly efficiently because the radius of each layer is always equal or greater than the ones it supports, so the radius can always be set equal to the last layer. The equations account for a very simplified wind pressure equation and an assumed lean or tilt. Bending shear is also calculated for curiosity but is generally minor.
+
+Research was somewhat rushed and memory of first year is a bit hazy so the equations may not have been implemented correctly, particularly in the case of bending shear. Corrections are appreciated.
